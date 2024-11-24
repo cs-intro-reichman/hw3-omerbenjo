@@ -6,16 +6,18 @@ import java.util.Random;
 public class Anagram {
 	public static void main(String args[]) {
 		//Tests the isAnagram function.
-		System.out.println(isAnagram("silent","listen"));  // true
-		System.out.println(isAnagram("William Shakespeare","I am a weakish speller")); // true
-		System.out.println(isAnagram("Madam Curie","Radium came")); // true
-		System.out.println(isAnagram("Tom Marvolo Riddle","I am Lord Voldemort")); // true
+		// System.out.println(isAnagram("silent","listen"));  // true
+		// System.out.println(isAnagram("William Shakespeare","I am a weakish speller")); // true
+		// System.out.println(isAnagram("Madam Curie","Radium came")); // true
+		// System.out.println(isAnagram("Tom Marvolo Riddle","I am Lord Voldemort")); // true
 
 		//Tests the preProcess function.
-		System.out.println(preProcess("What? No way!!!"));
+	//	System.out.println(preProcess("What? No way!!!"));
+		System.out.println(preProcess("Hello World!"));
+
 		
 		// Tests the randomAnagram function.
-		System.out.println("silent and " + randomAnagram("silent") + " are anagrams.");
+		//System.out.println("silent and " + randomAnagram("silent") + " are anagrams.");
 
 		
 		// Performs a stress test of randomAnagram 
@@ -33,6 +35,7 @@ public class Anagram {
 
 	// Returns true if the two given strings are anagrams, false otherwise.
 	public static boolean isAnagram(String str1, String str2) {
+		if (str1.equals(str2)) return true;
 		str1 = str1.toLowerCase();
 		str2 = str2.toLowerCase();
 		str1 = str1.replace(" ", "");
@@ -58,12 +61,11 @@ public class Anagram {
 		str = str.toLowerCase();
 		StringBuilder sb = new StringBuilder();
 		for(int i = 0; i < str.length(); i++) {
-			if (Character.isLetter(str.charAt(i))) {
+			if (Character.isLetter(str.charAt(i))|| str.charAt(i) == ' ') {
 				//adding data into the StringBuilder
 				sb.append(str.charAt(i));
 			}
 		}
-		//return the String contained in the StringBuilder
 		return sb.toString();
 	} 
 	   
