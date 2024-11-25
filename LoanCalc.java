@@ -12,7 +12,7 @@ public class LoanCalc {
 		double loan=  Double.parseDouble(args[0]);
 		double rate = Double.parseDouble(args[1]);
 		int n =Integer.parseInt(args[2]);
-		System.out.println("Loan = " + loan + ", interest rate = " + rate + "%, periods = " + n);
+		System.out.println("Loan sum = " + loan + ", interest rate = " + rate + "%, periods = " + n);
 
 		// Computes the ending balance of the loan, given a periodical payment
 		double payment = bruteForceSolver(loan, rate, n, epsilon);
