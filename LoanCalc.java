@@ -15,17 +15,26 @@ public class LoanCalc {
 		System.out.println("Loan = " + loan + ", interest rate = " + rate + "%, periods = " + n);
 
 		// Computes the ending balance of the loan, given a periodical payment
-		double payment = bruteForceSolver(loan, rate, n, epsilon);
-		//double endBalance = endBalance(loan, rate, n,payment );
-		//System.out.println(" periodical payment is " + String.format("%.2f", payment) + ", your ending balance is: " + (int) endBalance);
+		// double payment = bruteForceSolver(loan, rate, n, epsilon);
+		// //double endBalance = endBalance(loan, rate, n,payment );
+		// //System.out.println(" periodical payment is " + String.format("%.2f", payment) + ", your ending balance is: " + (int) endBalance);
 		
-		// Computes the periodical payment using brute force search
-		System.out.println("Periodical payment, using brute force: "+(int)( payment));
+		// // Computes the periodical payment using brute force search
+		// System.out.println("Periodical payment, using brute force: "+(int)( payment));
+		// System.out.println("number of iterations: " + iterationCounter);
+
+		// // // Computes the periodical payment using bisection search
+		// payment =bisectionSolver(loan, rate, n, epsilon);
+		// System.out.println("Periodical payment, using bi-section search: " +(int)(payment));
+		// System.out.println("number of iterations: " + iterationCounter);
+
+		System.out.print("\nPeriodical payment, using brute force: ");
+		System.out.println((int) bruteForceSolver(loan, rate, n, epsilon));
 		System.out.println("number of iterations: " + iterationCounter);
 
-		// // Computes the periodical payment using bisection search
-		payment =bisectionSolver(loan, rate, n, epsilon);
-		System.out.println("Periodical payment, using bi-section search: " +(int)(payment));
+		// Computes the periodical payment using bisection search
+		System.out.print("\nPeriodical payment, using bi-section search: ");
+		System.out.println((int) bisectionSolver(loan, rate, n, epsilon));
 		System.out.println("number of iterations: " + iterationCounter);
 	}
 
